@@ -14,6 +14,14 @@ import Connect from './components/Connect';
 import { Contact } from './components/Contact';
 import { Prueba } from './components/Prueba';
 import { HomeT } from './components/HomeT';
+import { Usuario } from './components/Usuario';
+import { ClientesT } from './components/ClientesT';
+import ImagenesComponent from './components/ImagenesComponent';
+import { Cuenta } from './components/Cuenta';
+import { Direccion } from './components/Direccion';
+import { HouseId } from './components/HouseId';
+import { PropiedadT } from './components/PropiedadT';
+import { NuevaPropiedad } from './components/NuevaPropiedad';
 
 
 function App() {
@@ -30,6 +38,14 @@ function App() {
         <Route path='/Prueba' element={<Prueba/>}></Route>
         <Route path='/Contacto' element={<Contact/>}></Route>
         <Route path='/Inicio' element={<HomeT/>}></Route>
+        <Route path='/Usuario' element={<Usuario/>}></Route>
+        <Route path='/Cliente' element={<ClientesT/>}></Route>
+        <Route path='/imagen' element={<ImagenesComponent/>}></Route>
+        <Route path='/NuevaCuenta' element={<Cuenta/>}></Route>
+        <Route path='direc' element={<Direccion/>}></Route>
+        <Route path='/CasaID' element={<HouseId/>}></Route>
+        <Route path='/Propiedad' element={<PropiedadT/>}></Route>
+        <Route path='/NuevaPropiedad' element={<NuevaPropiedad/>}></Route>
       </Routes>
       <Footer/> 
     </>

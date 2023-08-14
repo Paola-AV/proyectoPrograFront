@@ -4,6 +4,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaWaze } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaArrowCircleDown } from "react-icons/fa";
+import Formulario from "./Formulario";
 
 export function Contact() {
     return (
@@ -38,31 +39,9 @@ export function Contact() {
                     <FaArrowCircleDown className="iconContact" />
                 </div>
             </section>
-
-            <section className="inputSec">
-                    <h2 className="InputTittle">Ponte en contacto con nosotros</h2>
-
-                    <div class="inputDiv">
-                        <label>Correo</label>
-                        <div id="iconInput">
-                            <FaRegEnvelope id="icon" />
-                            <input type="text" class="inputC" ></input>
-                        </div>
-                    </div>
-
-                    <div class="inputDiv">
-                        <label>Telefono</label>
-                        <div id="iconInput">
-                            <BsFillTelephoneFill id="icon" />
-                            <input type="text" class="inputC" ></input>
-                        </div>
-                    </div>
-
-                <div id="inputMensaje">
-                    <label id="mensaje">Mensaje</label>
-                    <textarea type="text" id="mensajeInput" ></textarea>
-                </div>
-                <button className="contactBtn">Enviar</button>
+            <section className="formularioSec">
+                <h3 className="formTittle">Escribenos y pronto te contactaremos!</h3>
+                <Formulario/>
             </section>
 
         </section>

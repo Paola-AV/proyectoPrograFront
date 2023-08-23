@@ -1,40 +1,35 @@
 import { useEffect, useState } from "react";
+import Houses from "./Houses";
+//componente con direccion segun el ID de la propiedad
+export function Direccion({ propiedadID }) {
+  const [direccion, setDireccion] = useState([]);
 
-export function Direccion(){
-    const [direccion, setDireccion] = useState([]);
-    const [propiedad, setPropiedad] = useState([]);
+  useEffect(() => {
+    fetch('http://localhost:8000/direccion/direccion/' + propiedadID)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setDireccion(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
-    useEffect(() => {
-        Promise.all([
-            fetch('http://localhost:8000/propiedad'),
-          fetch('http://localhost:8000/direccion'),
-        ])
-          .then(([resPropiedad, resDireccion]) => 
-            Promise.all([resPropiedad.json(), resDireccion.json()])
-          )
-          .then(([dataPropiedad, dataDireccion]) => {
-            setPropiedad(dataPropiedad);
-            setDireccion(dataDireccion);
+  const [showDiv, setShowDiv] = useState(false);
 
-          });
-      }, []);
+  const toggleDiv = () => {
+    setShowDiv(!showDiv);
+  };
 
-      return(
-        <section>
-            <div className="propiedadesContainer">
-               
-               {propiedad.map(propiedad => (
-                <div key={propiedad.id}  className="propiedadesDiv">  
-                <h3>{propiedad.nombre}</h3>
-                {direccion.map(direccion=>(
-                    <section><h3>{direccion.provincia}</h3></section>
-                ))}
-                <div><h3>Cuartos: {propiedad.cuartos}  Baños: {propiedad.banos} </h3></div>
-                </div>
-               ))}
-                
-            </div>
-        </section>
-      )
+  return (
+    <> {direccion.map(direccion => (
+      <div key={direccion.id}>
+        <p>{direccion.canton}, {direccion.distrito}, {direccion.provincia}</p>
+      </div>
+    ))}
+
+    </>
+  )
 
 }

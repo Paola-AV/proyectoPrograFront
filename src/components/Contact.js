@@ -5,7 +5,7 @@ import { FaWaze } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaArrowCircleDown } from "react-icons/fa";
 import Formulario from "./Formulario";
-
+//componente con informacion de contacto
 export function Contact() {
     return (
         <section className="ContactSec">
@@ -41,7 +41,7 @@ export function Contact() {
             </section>
             <section className="formularioSec">
                 <h3 className="formTittle">Escribenos y pronto te contactaremos!</h3>
-                <Formulario/>
+                <Formulario />
             </section>
 
         </section>
